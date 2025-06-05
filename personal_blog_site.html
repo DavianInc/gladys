@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng. Gladys Namunyak Sunde - Pharma Engineering & Leadership</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e3c72;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #1e3c72;
+        }
+
+        .admin-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .admin-btn:hover {
+            background: #c0392b;
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 800;
+        }
+
+        .hero .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .hero .mission {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.85;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .topics {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .topic-tag {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .career-story {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #1e3c72;
+        }
+
+        .blog-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .category-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-post {
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-post h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .blog-meta {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-badge {
+            background: #1e3c72;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .blog-content {
+            color: #495057;
+            line-height: 1.6;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .resource-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+
+        .speaking-highlight {
+            background: linear-gradient(135deg, #ff7b7b 0%, #667eea 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* Admin Panel Styles */
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+        }
+
+        .admin-content {
+            background: white;
+            margin: 2% auto;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 15px;
+            padding: 2rem;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        .close-admin {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e9ecef;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1e3c72;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn-primary {
+            background: #1e3c72;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #2a5298;
+        }
+
+        .posts-list {
+            margin-top: 2rem;
+        }
+
+        .post-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .topics {
+                gap: 0.5rem;
+            }
+            
+            .topic-tag {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.8rem;
+            }
+            
+            .admin-content {
+                margin: 1% auto;
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Eng. Gladys Namunyak Sunde</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#speaking">Speaking</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="admin-btn" onclick="openAdmin()">Admin</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Eng. Gladys Namunyak Sunde</h1>
+                <p class="subtitle">Pharma Engineering Leader & Compliance Expert</p>
+                <p class="mission">Empowering pharmaceutical professionals to excel in engineering, operations compliance, and leadership while navigating the complex dynamics of corporate environments.</p>
+                
+                <div class="topics">
+                    <span class="topic-tag">Pharma Engineering</span>
+                    <span class="topic-tag">GMP Compliance</span>
+                    <span class="topic-tag">Leadership Development</span>
+                    <span class="topic-tag">Work Politics Navigation</span>
+                    <span class="topic-tag">Team Building</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <section id="about" class="section">
+                <h2>About Me</h2>
+                <div class="career-story">
+                    <h3>My Journey: From Factory Floor to Senior Leadership</h3>
+                    <p>My career in pharmaceutical engineering has been a journey of continuous learning, adaptation, and growth. Starting from the factory floor, I've experienced firsthand the challenges and opportunities that exist at every level of pharmaceutical operations.</p>
+                    
+                    <p>Through years of hands-on experience in GMP compliance, equipment validation, audits, and team leadership, I've developed a unique perspective on what it takes to succeed in this industry - not just technically, but also in navigating the complex human dynamics that often determine career success.</p>
+                </div>
+                
+                <h3>My Vision & Values</h3>
+                <p>I believe that technical excellence must be paired with strong leadership skills and emotional intelligence to create lasting impact in pharmaceutical manufacturing. My mission is to share practical insights that help professionals at all levels excel in their careers while maintaining integrity and fostering positive workplace cultures.</p>
+                
+                <p><em>Professional photo placeholder - Upload your high-resolution professional headshot here</em></p>
+            </section>
+
+            <section id="blog" class="section">
+                <h2>Blog & Articles</h2>
+                
+                <div class="blog-categories">
+                    <div class="category-card" onclick="filterPosts('engineering')">
+                        <h4>Engineering & Pharma Compliance</h4>
+                        <p>GMP, validations, audits, key pharma equipment insights</p>
+                    </div>
+                    <div class="category-card" onclick="filterPosts('leadership')">
+                        <h4>Leadership</h4>
+                        <p>Team building, emotional intelligence, decision-making</p>
+                    </div>
+                    <div class="category-card" onclick="filterPosts('politics')">
+                        <h4>Navigating Work Politics</h4>
+                        <p>Real stories, strategies, survival tips</p>
+                    </div>
+                </div>
+                
+                <div id="blog-posts" class="blog-grid">
+                    <!-- Blog posts will be dynamically inserted here -->
+                </div>
+            </section>
+
+            <section id="resources" class="section">
+                <h2>Resources</h2>
+                <p>Tools, templates, and resources I've developed to help pharmaceutical professionals excel in their roles.</p>
+                
+                <div class="resources-grid">
+                    <div class="resource-item">
+                        <h4>GMP Compliance Checklist</h4>
+                        <p>Comprehensive checklist for ensuring GMP compliance across manufacturing operations.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Equipment Validation Templates</h4>
+                        <p>Ready-to-use templates for pharmaceutical equipment validation protocols.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Leadership Assessment Tool</h4>
+                        <p>Self-assessment framework for developing leadership competencies in technical environments.</p>
+                    </div>
+                    <div class="resource-item">
+                        <h4>Recommended Reading</h4>
+                        <p>Curated list of books, courses, and articles for pharmaceutical professionals seeking career growth.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="speaking" class="section">
+                <h2>Speaking & Consulting</h2>
+                
+                <div class="speaking-highlight">
+                    <h3>Available for Speaking Engagements</h3>
+                    <p>I offer keynote presentations and workshops on pharmaceutical engineering, leadership development, and workplace dynamics. Let's discuss how I can add value to your next event or team development initiative.</p>
+                </div>
+                
+                <h3>Popular Speaking Topics:</h3>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>"From Factory Floor to Leadership: Lessons in Pharmaceutical Excellence"</li>
+                    <li>"GMP Compliance: Beyond the Regulations"</li>
+                    <li>"Building High-Performance Teams in Technical Environments"</li>
+                    <li>"Navigating Workplace Politics: Strategies for Success"</li>
+                    <li>"Women in Pharmaceutical Engineering: Breaking Barriers"</li>
+                </ul>
+            </section>
+
+            <section id="contact" class="section">
+                <h2>Get In Touch</h2>
+                <p>Ready to connect? I'd love to hear from you whether you're looking for consulting, speaking opportunities, or just want to discuss pharmaceutical engineering and leadership.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h4>Email</h4>
+                        <p>gladys.sunde@example.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <h4>LinkedIn</h4>
+                        <p>Connect with me on LinkedIn for professional updates and industry insights</p>
+                    </div>
+                    <div class="contact-card">
+                        <h4>Speaking Inquiries</h4>
+                        <p>Available for conferences, workshops, and corporate training sessions</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel" class="admin-panel">
+        <div class="admin-content">
+            <div class="admin-header">
+                <h2>Blog Admin Panel</h2>
+                <button class="close-admin" onclick="closeAdmin()">Close</button>
+            </div>
+
+            <form id="blog-form">
+                <div class="form-group">
+                    <label for="post-title">Post Title</label>
+                    <input type="text" id="post-title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="post-category">Category</label>
+                    <select id="post-category" required>
+                        <option value="">Select Category</option>
+                        <option value="engineering">Engineering & Pharma Compliance</option>
+                        <option value="leadership">Leadership</option>
+                        <option value="politics">Navigating Work Politics</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="post-content">Post Content</label>
+                    <textarea id="post-content" required placeholder="Write your blog post here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Publish Post</button>
+            </form>
+
+            <div class="posts-list">
+                <h3>Manage Posts</h3>
+                <div id="posts-management">
+                    <!-- Existing posts management will appear here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // In-memory storage for blog posts with sample content
+        let blogPosts = [
+            {
+                id: 1,
+                title: "How I Rose from the Factory Floor to Senior Leadership in Pharma",
+                category: "leadership",
+                content: "My journey in pharmaceutical manufacturing began on the factory floor, and every step taught me valuable lessons about leadership, persistence, and the importance of understanding operations from the ground up. Here's what I learned along the way...",
+                date: new Date(Date.now() - 86400000 * 5).toLocaleDateString(),
+                timestamp: Date.now() - 86400000 * 5
+            },
+            {
+                id: 2,
+                title: "5 Engineering Compliance Lessons I Learned the Hard Way",
+                category: "engineering",
+                content: "Compliance in pharmaceutical engineering isn't just about following procedures - it's about understanding the why behind every regulation. Here are five critical lessons that shaped my approach to GMP compliance...",
+                date: new Date(Date.now() - 86400000 * 3).toLocaleDateString(),
+                timestamp: Date.now() - 86400000 * 3
+            },
+            {
+                id: 3,
+                title: "What They Don't Tell You About Leading Teams",
+                category: "leadership",
+                content: "Technical expertise will get you promoted, but emotional intelligence will determine your success as a leader. After years of leading diverse teams in high-pressure environments, here's what I wish someone had told me...",
+                date: new Date(Date.now() - 86400000 * 1).toLocaleDateString(),
+                timestamp: Date.now() - 86400000 * 1
+            },
+            {
+                id: 4,
+                title: "How to Build Influence Without Authority",
+                category: "politics",
+                content: "In pharmaceutical organizations, your ability to influence outcomes often matters more than your position on the org chart. Here's how to build genuine influence and drive results even when you're not the decision maker...",
+                date: new Date().toLocaleDateString(),
+                timestamp: Date.now()
+            }
+        ];
+
+        let currentFilter = '';
+
+        // Load blog posts on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            displayBlogPosts();
+            displayPostsManagement();
+        });
+
+        // Display blog posts on the main page
+        function displayBlogPosts(filter = '') {
+            const blogContainer = document.getElementById('blog-posts');
+            
+            let postsToShow = blogPosts;
+            if (filter) {
+                postsToShow = blogPosts.filter(post => post.category === filter);
+            }
+            
+            if (postsToShow.length === 0) {
+                blogContainer.innerHTML = '<p>No blog posts found for this category.</p>';
+                return;
+            }
+
+            // Sort posts by timestamp (newest first)
+            const sortedPosts = postsToShow.sort((a, b) => b.timestamp - a.timestamp);
+            
+            blogContainer.innerHTML = sortedPosts.map(post => `
+                <article class="blog-post">
+                    <h4>${post.title}</h4>
+                    <div class="blog-meta">
+                        <span>${post.date}</span>
+                        <span class="category-badge">${getCategoryName(post.category)}</span>
+                    </div>
+                    <div class="blog-content">${post.content.substring(0, 200)}${post.content.length > 200 ? '...' : ''}</div>
+                </article>
+            `).join('');
+        }
+
+        // Get category display name
+        function getCategoryName(category) {
+            const categories = {
+                'engineering': 'Engineering & Compliance',
+                'leadership': 'Leadership',
+                'politics': 'Work Politics'
+            };
+            return categories[category] || category;
+        }
+
+        // Filter posts by category
+        function filterPosts(category) {
+            currentFilter = currentFilter === category ? '' : category;
+            displayBlogPosts(currentFilter);
+            
+            // Update category cards visual state
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.style.opacity = currentFilter === '' || card.onclick.toString().includes(currentFilter) ? '1' : '0.6';
+            });
+        }
+
+        // Display posts in admin management section
+        function displayPostsManagement() {
+            const managementContainer = document.getElementById('posts-management');
+            
+            if (blogPosts.length === 0) {
+                managementContainer.innerHTML = '<p>No posts to manage.</p>';
+                return;
+            }
+
+            managementContainer.innerHTML = blogPosts.map(post => `
+                <div class="post-item">
+                    <div>
+                        <strong>${post.title}</strong>
+                        <small> - ${getCategoryName(post.category)} - ${post.date}</small>
+                    </div>
+                    <div class="post-actions">
+                        <button class="btn-danger" onclick="deletePost(${post.id})">Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Open admin panel
+        function openAdmin() {
+            document.getElementById('admin-panel').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close admin panel
+        function closeAdmin() {
+            document.getElementById('admin-panel').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Handle blog form submission
+        document.getElementById('blog-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('post-title').value.trim();
+            const category = document.getElementById('post-category').value;
+            const content = document.getElementById('post-content').value.trim();
+            
+            if (!title || !category || !content) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Create new blog post
+            const newPost = {
+                id: Date.now(),
+                title: title,
+                category: category,
+                content: content,
+                date: new Date().toLocaleDateString(),
+                timestamp: Date.now()
+            };
+
+            blogPosts.push(newPost);
+            
+            // Clear form
+            document.getElementById('post-title').value = '';
+            document.getElementById('post-category').value = '';
+            document.getElementById('post-content').value = '';
+            
+            // Refresh displays
+            displayBlogPosts(currentFilter);
+            displayPostsManagement();
+            
+            alert('Post published successfully!');
+        });
+
+        // Delete a blog post
+        function deletePost(postId) {
+            if (confirm('Are you sure you want to delete this post?')) {
+                blogPosts = blogPosts.filter(post => post.id !== postId);
+                displayBlogPosts(currentFilter);
+                displayPostsManagement();
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close admin panel when clicking outside
+        document.getElementById('admin-panel').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAdmin();
+            }
+        });
+    </script>
+</body>
+</html>
